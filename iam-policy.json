@@ -3,13 +3,17 @@
   "Statement": [
     {
       "Effect": "Allow",
+      "Action": "logs:CreateLogGroup",
+      "Resource": "arn:aws:logs:${region}:${account_id}:*"
+    },
+    {
+      "Effect": "Allow",
       "Action": [
-        "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:PutLogEvents"
       ],
       "Resource": [
-        "arn:aws:logs:*:*:*"
+        "arn:aws:logs:${region}:${account_id}:log-group:/aws/lambda/learning-terraform-lambda:*"
       ]
     }
   ]

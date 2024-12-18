@@ -11,7 +11,7 @@ resource "aws_lambda_permission" "apigw_invoke" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.learning-terraform.function_name
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.learning-terraform-api.execution_arn}/*/*"
+  source_arn    = "${aws_api_gateway_rest_api.learning-terraform-api.execution_arn}/*"
 }
 
 
@@ -20,7 +20,7 @@ resource "aws_api_gateway_deployment" "learning-terraform-api-deployment" {
 
   depends_on = [
     aws_api_gateway_integration.learning-terraform-api-health-get,
-    aws_api_gateway_integration.learning-terraform-api-health-options
+    aws_api_gateway_method_response.learning-terraform-api-health-get
   ]
 }
 

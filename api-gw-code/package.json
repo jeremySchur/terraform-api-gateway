@@ -1,0 +1,15 @@
+{
+  "name": "learning-user-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "jeremyschur",
+  "license": "ISC",
+  "description": "Learning how to create an api with AWS API Gateway.",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.699.0",
+    "@aws-sdk/util-dynamodb": "^3.704.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
