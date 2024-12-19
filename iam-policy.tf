@@ -8,5 +8,3 @@ resource "aws_iam_role_policy" "iam_cloudwatch_policy_for_lambda" {
     account_id = data.aws_caller_identity.current.account_id
   })
 }
-
-

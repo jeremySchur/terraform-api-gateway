@@ -15,6 +15,19 @@
       "Resource": [
         "arn:aws:logs:${region}:${account_id}:log-group:/aws/lambda/learning-terraform-lambda:*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:BatchGetItem",
+        "dynamodb:GetItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem"
+      ],
+      "Resource": "arn:aws:dynamodb:${region}:${account_id}:table/learning-user-login"
     }
   ]
 }
